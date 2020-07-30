@@ -1,0 +1,2 @@
+/* It's reasonable that name is not unique. Should not select all the name distinctively from people who starred in a movie released in 2004 directly */
+SELECT name FROM people WHERE id IN (SELECT DISTINCT person_id FROM stars JOIN movies ON movie_id = id WHERE year = 2004) ORDER BY birth;
